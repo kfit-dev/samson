@@ -1,5 +1,6 @@
 ![](https://github.com/zendesk/samson/raw/master/app/assets/images/logo_light.png)
 
+
 [![Build Status](https://travis-ci.org/zendesk/samson.svg?branch=master)](https://travis-ci.org/zendesk/samson)
 [![DockerHub Status](https://img.shields.io/docker/stars/zendesk/samson.svg)](https://hub.docker.com/r/zendesk/samson)
 
