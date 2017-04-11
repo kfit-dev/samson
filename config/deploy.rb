@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :repo_url, "git@github.com:zendesk/samson.git"
+set :repo_url, "git@github.com:kfit-dev/samson.git"
 
 set :rbenv_custom_path, '/opt/rbenv'
 set :rbenv_type, :system
