@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/kfit-dev/capistrano-gitflow.git
+  revision: 7253cd2e62d3e73d31fd6c9267da564394391cd2
+  specs:
+    capistrano-gitflow (1.4.3)
+      capistrano
+      stringex
+
 PATH
   remote: plugins/airbrake
   specs:
@@ -149,6 +157,8 @@ GEM
     airbrake-user_informer (0.1.0)
       rack
       railties (~> 5.0.0)
+    airbrussh (1.1.2)
+      sshkit (>= 1.6.1, != 1.7.0)
     angular-rails-templates (1.0.2)
       railties (>= 4.2, < 6)
       sprockets (>= 3.0, < 5)
@@ -181,6 +191,24 @@ GEM
       bundler (~> 1.2)
       thor (~> 0.18)
     byebug (8.2.2)
+    capistrano (3.8.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.2.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-faster-assets (1.0.2)
+      capistrano (>= 3.1)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
+    capistrano-rails (1.2.3)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rbenv (2.1.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
     coderay (1.1.1)
     concurrent-ruby (1.0.3)
     connection_pool (2.2.0)
@@ -262,6 +290,7 @@ GEM
       http (= 0.9.8)
       recursive-open-struct (= 1.0.0)
       rest-client
+    libv8 (5.3.332.38.5)
     lograge (0.3.6)
       actionpack (>= 3)
       activesupport (>= 3)
@@ -278,6 +307,8 @@ GEM
     method_source (0.8.2)
     mime-types (2.99.3)
     mini_portile2 (2.1.0)
+    mini_racer (0.1.9)
+      libv8 (~> 5.3)
     minitest (5.10.1)
     minitest-rails (3.0.0)
       minitest (~> 5.8)
@@ -288,9 +319,11 @@ GEM
     multi_json (1.12.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
     net-http-persistent (2.9.4)
     net-ldap (0.14.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.1.0)
     netrc (0.11.0)
     newrelic_rpm (3.15.2.317)
     ngannotate-rails (1.2.1)
@@ -475,9 +508,12 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.11)
     sse-rails-engine (1.5.0)
       rails (>= 4.0, < 5.1)
+    sshkit (1.13.1)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
+    stringex (2.7.1)
     sucker_punch (2.0.1)
       concurrent-ruby (~> 1.0.0)
     terminal-table (1.7.3)
@@ -533,6 +569,12 @@ DEPENDENCIES
   bundler
   bundler-audit
   byebug
+  capistrano
+  capistrano-faster-assets (~> 1.0)
+  capistrano-gitflow!
+  capistrano-passenger
+  capistrano-rails
+  capistrano-rbenv
   coderay
   concurrent-ruby
   connection_pool
@@ -552,9 +594,9 @@ DEPENDENCIES
   logstash-event
   marco-polo
   maxitest
+  mini_racer
   minitest-rails (= 3.0.0)
   mocha
-  mysql2
   net-http-persistent
   newrelic_rpm
   ngannotate-rails
@@ -622,7 +664,6 @@ DEPENDENCIES
   sawyer
   single_cov
   soft_deletion
-  sqlite3
   sse-rails-engine
   sucker_punch (~> 2.0)
   uglifier

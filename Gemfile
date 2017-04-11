@@ -49,23 +49,24 @@ gem 'concurrent-ruby'
 gem 'vault'
 gem 'docker-api', '>= 1.32'
 gem 'newrelic_rpm'
+gem 'mini_racer'
 
 # treat included plugins like gems
 Dir[File.join(Bundler.root, 'plugins/*/')].each { |f| gemspec path: f }
 
 gem 'sucker_punch', '~> 2.0'
 
-group :mysql2 do
-  gem 'mysql2'
-end
+# group :mysql2 do
+#   gem 'mysql2'
+# end
 
 group :postgres do
   gem 'pg'
 end
 
-group :sqlite do
-  gem "sqlite3"
-end
+# group :sqlite do
+#   gem "sqlite3"
+# end
 
 group :production, :staging do
   gem 'airbrake'
@@ -137,4 +138,13 @@ group :test do
   gem 'query_diet', '0.6.1'
   gem 'ar_multi_threaded_transactional_tests'
   gem 'bundler-audit', require: false
+end
+
+group :development do
+  gem "capistrano"
+  gem "capistrano-rbenv"
+  gem "capistrano-rails"
+  gem "capistrano-gitflow", git: "https://github.com/kfit-dev/capistrano-gitflow.git"
+  gem "capistrano-faster-assets", "~> 1.0"
+  gem "capistrano-passenger"
 end
