@@ -78,7 +78,7 @@ group :assets do
   gem 'uglifier'
   gem 'angular-rails-templates'
   gem 'bootstrap-sass'
-  gem 'mini_racer'
+  gem 'therubyracer'
 
   source 'https://rails-assets.org' do
     gem 'rails-assets-angular'
